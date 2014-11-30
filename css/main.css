@@ -8,9 +8,8 @@ body{
 }
 
 .clock{
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute;
+  top: 30%;
   width: 100px;
   text-align: center;
   left: 0;
