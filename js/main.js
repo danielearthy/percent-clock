@@ -6,8 +6,9 @@ var clock = {
     var _date = new Date();
     var _hoursInMinutes = _date.getHours() * 60;
     var _minutesInHour = _date.getMinutes();
-    var _totalMinutes = _hoursInMinutes + _minutesInHour;
-    var _percentTime = (_totalMinutes / MinutesInDay *  100).toFixed(2);
+    var _SecondsInMinutes = _date.getSeconds() / 60;
+    var _totalMinutes = _hoursInMinutes + _minutesInHour + _SecondsInMinutes;
+    var _percentTime = (_totalMinutes / MinutesInDay *  100).toFixed(3);
     this.currentTime = _percentTime
   },
 
@@ -22,7 +23,7 @@ $(document).ready(function(){
   
   clock.updateDOMTime();
   
-  setInterval(function(){
+  setInterval(function(){ 
     clock.updateTime();
     clock.updateDOMTime();
   },1000);
